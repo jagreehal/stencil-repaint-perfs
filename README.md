@@ -1,0 +1,1 @@
+[Stencil](https://stenciljs.com) version of http://mathieuancelin.github.io/js-repaint-perfs/

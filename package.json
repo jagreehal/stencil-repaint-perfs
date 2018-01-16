@@ -1,0 +1,38 @@
+{
+  "name": "stencil-repaint-perfs",
+  "version": "1.0.0",
+  "description": "Stencil version of js-repaint-perfs",
+  "main": "dist/stencilrepaintperfs.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": ["dist/"],
+  "scripts": {
+    "build": "stencil build",
+    "dev":
+      "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache"
+  },
+  "author": "Jag Reehal",
+  "license": "ISC",
+  "dependencies": {
+    "@stencil/core": "^0.1.4"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "0.0.18",
+    "@stencil/utils": "^0.0.4",
+    "@types/jest": "^22.0.1",
+    "jest": "^22.1.1",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$":
+        "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js"]
+  }
+}
