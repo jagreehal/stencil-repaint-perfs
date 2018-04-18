@@ -5,11 +5,12 @@
   "main": "dist/stencilrepaintperfs.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "stencil build",
-    "dev":
-      "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
     "test": "jest --no-cache",
@@ -18,21 +19,24 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "^0.1.4"
+    "@stencil/core": "^0.7.25"
   },
   "devDependencies": {
     "@stencil/dev-server": "0.0.18",
     "@stencil/utils": "^0.0.4",
-    "@types/jest": "^22.0.1",
-    "jest": "^22.1.1",
-    "typescript": "^2.6.2"
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "typescript": "^2.8.1"
   },
   "jest": {
     "transform": {
-      "^.+\\.(ts|tsx)$":
-        "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
   }
 }

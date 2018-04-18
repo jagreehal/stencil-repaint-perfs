@@ -4,33 +4,56 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
-
-import {
-  DbMon as DbMon
-} from './components/db-mon/db-mon';
+import '@stencil/core';
 
 declare global {
-  interface HTMLDbMonElement extends DbMon, HTMLElement {
+  namespace JSX {
+    interface Element {}
+    export interface IntrinsicElements {}
   }
+  namespace JSXElements {}
+
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
+  }
+
+  interface HTMLAttributes {}
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface DbMon {
+
+    }
+  }
+
+  interface HTMLDbMonElement extends StencilComponents.DbMon, HTMLStencilElement {}
+
   var HTMLDbMonElement: {
     prototype: HTMLDbMonElement;
     new (): HTMLDbMonElement;
   };
   interface HTMLElementTagNameMap {
-    "db-mon": HTMLDbMonElement;
+    'db-mon': HTMLDbMonElement;
   }
   interface ElementTagNameMap {
-    "db-mon": HTMLDbMonElement;
+    'db-mon': HTMLDbMonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "db-mon": JSXElements.DbMonAttributes;
+      'db-mon': JSXElements.DbMonAttributes;
     }
   }
   namespace JSXElements {
     export interface DbMonAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
 
+declare global { namespace JSX { interface StencilJSX {} } }

@@ -1,7 +1,14 @@
 exports.config = {
   namespace: 'stencilrepaintperfs',
-  generateDistribution: true,
-  bundles: [{ components: ['db-mon'] }]
+  outputTargets: [
+    {
+      type: 'www',
+      serviceWorker: false
+    },
+    {
+      type: 'dist'
+    }
+  ],
 };
 
 exports.devServer = {
